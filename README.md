@@ -1,4 +1,16 @@
-# 1 BACK END SET UP
+# 0: Planning 
+## IDEA:##
+
+## WireFrame:##
+https://drive.google.com/file/d/1cWHiQE81FAT80KeZlNZigus6c2F_pfqb/view?usp=sharing
+
+
+# 1: BACK END SET UP
+### Technologies Used ###
+* Node.js
+* Express
+* Mongoose
+* bcrypt to hash user passwords
 
 ### Middleware Used: ###
 
@@ -8,6 +20,10 @@
 * express.urlencoded 
 
             
-# 1 Front END SET UP
+# 2: Front END SET UP
 
-### React App Creation ###
+### Technologies Used ###
+* React 
+
+
+# 3: Upcoming Updates ###
