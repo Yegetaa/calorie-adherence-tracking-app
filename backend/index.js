@@ -16,8 +16,9 @@ app.use(express.urlencoded({extended: true}))
 
 //Routes
 import usersRoutes from "./routes/users.js"
+import caloriesRoutes from "./routes/calories.js";
 app.use("/api/users", usersRoutes);
-
+app.use("/api/calories", caloriesRoutes);
 
 app.get ("/", (req, res) =>{
     res.send("Welcome")
