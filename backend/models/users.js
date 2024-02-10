@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
+
+const { Schema } = mongoose;
+
 import bcrypt from "bcrypt";
 
 const SALT_ROUNDS = 8;
 
-const usersSchema = new mongoose.Schema({
+const usersSchema = Schema({
     username: {
         type: String,
         minLength: 3,
