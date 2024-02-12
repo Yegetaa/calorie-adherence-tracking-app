@@ -7,6 +7,7 @@ import bcrypt from "bcrypt";
 const SALT_ROUNDS = 8;
 
 const usersSchema = Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     username: {
         type: String,
         minLength: 3,

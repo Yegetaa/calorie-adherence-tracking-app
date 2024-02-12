@@ -10,14 +10,20 @@ const router = new Router();
  */
 
 router.get('/', async (req, res) => {
-    try {
+  try {
+      // Check if user is authenticated and user object exists
+      if (!req.user || !req.user._id) {
+          return res.status(401).json({ message: 'Unauthorized' });
+      }
+
       const calories = await CalorieConsumption.find({ user: req.user._id });
       res.json(calories);
-    } catch (error) {
+  } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Server Error' });
-    }
-  });
+  }
+});
+
   
 
 /**

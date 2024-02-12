@@ -1,12 +1,18 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import ejs from "ejs";
 
+
+//connect 
 import "./localEnv.js"
 import conn from "./db/conn.js"; conn();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+//use EJS as a view engine
+app.set("view engine", ejs.viewEngine);
 
 //Middlewares
 app.use(cors()); //allows front end to connect to backend 
