@@ -1,7 +1,14 @@
 # 0: Planning 
-## IDEA:
 
-## WireFrame:
+## IDEA
+Introducing CaloTrack, a personalized calorie adherence app designed to empower users on their wellness journey without any moral judgement! Say goodbye to traditional weight-centric apps and welcome a new era of mindful eating and balanced living.
+
+CaloTrack allows users to set their own calorie range based on their own individual goals and preferences. Then the app will assign colors for each tracked date based on this range.
+The end result is a simple visual representation of how many days the user has successfully stayed within their chosen calorie range each month. This will allow users to gain valuable insights into their eating habits and patterns. Furthermore, it will allow users to track their progress over time, identify trends, and make informed decisions to support their overall well-being.
+
+The goal is to help users see their eating habits as the ultimate goal, rather than viewing them merely as a means to an end such as losing or gaining weight. This approach fosters the development of enduring, healthy eating habits.
+
+## WireFrame
 https://drive.google.com/file/d/1cWHiQE81FAT80KeZlNZigus6c2F_pfqb/view?usp=sharing
 
 ## Task Planning and Progress Management ##
@@ -15,7 +22,7 @@ https://trello.com/invite/b/9v2eJ1o4/ATTI17df76aca97dffc6d5a031f3ac43ef31CB08898
 * MongoDB + Mongoose
 * Bcrypt to hash user passwords
 
-### Middleware Used: ###
+### Middleware Used ###
 
 * cors so that front end to connect to backend 
 * morgan as a logger
@@ -36,7 +43,14 @@ This application access the FoodData Central API (https://fdc.nal.usda.gov/api-g
 
 
 # 3: Upcoming Updates ###
+## 3.1  Upcoming Updates in the Backend 
 
+## 3.2 Upcoming Updates in the Frontend
+A Year component that allows users to select a month, 
+A Calendar component that is updated to render the calendar for the selected month of the year. 
+# Resources
+* https://github.com/alessandradocouto/landing-page-template-reactjs
+*
 
 <br>
 
