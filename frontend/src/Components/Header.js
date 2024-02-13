@@ -11,10 +11,10 @@ const Header = () => {
         minHeight: '80vh',
         display: 'flex',
         justifyContent: 'center',
-        // tamanhos
+        
         gap: theme.spacing(2),
         paddingTop: theme.spacing(10),
-        // cor de fundo
+      
         backgroundColor: 'orange',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
@@ -37,7 +37,7 @@ const Header = () => {
 
   return  (
         <CustomBox component='header'>
-            {/*  Box text  */}
+          
             <BoxText 
             component='section'
             >
@@ -67,6 +67,8 @@ const Header = () => {
 
                 <Box>
                     <Button 
+                    component={Link} 
+                    to={'/SignInOrUpPage'}
                     variant='contained'
                     sx={{
                         mr: 2,
@@ -90,7 +92,7 @@ const Header = () => {
                     </Button>
                     <Button 
                     component={Link} 
-                    to={'/about'} //link to sign in or sign up page
+                    to={'/SignInOrUpPage'}
                     variant='outlined'
                     sx={{
                         px: 4, 
@@ -111,7 +113,7 @@ const Header = () => {
                         }
                     }}
                     >
-                        about us
+                       Log In
                     </Button>
                 </Box>
             </BoxText>

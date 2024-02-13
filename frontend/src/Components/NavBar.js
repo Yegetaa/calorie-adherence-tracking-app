@@ -35,13 +35,17 @@ const itemList = [
       text: "Home",
       to: "/" 
     },
+    // {
+    //   text: "About",
+    //   to: "/about"
+    // }, to come in future versions
     {
-      text: "About",
-      to: "/about"
+        text: "SignIn",
+        to: "/signInOrUpPage"
     },
     {
-        text: "Contact",
-        to: "/contact"
+        text: "Learn More",
+        to: "/NutritionInfo"
     }
 ];
 
@@ -53,7 +57,7 @@ const Navbar = () => {
         component="nav" 
         position="sticky"
         sx={{ 
-            backgroundColor: 'orange', 
+            backgroundColor: '#cc712f', 
         }}
         elevation={0}
         >

@@ -11,13 +11,15 @@ import React, { useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 //Component Imports
-import NutritionInfo from './Components/NutritionInfo';
-import Calendar from "./Components/Calendar.js"
+// import NutritionInfo from './pages/NutritionInfo.js';
+// import Calendar from "./Components/Calendar.js"
 import Navbar from './Components/NavBar.js';
 
 //Page Imports
 import SignInOrUpPage from './pages/SignInOrUpPage';
 import Home from './pages/LandingPage.js';
+import NutritionInfo from './pages/NutritionInfo.js';
+import LandingPage from './pages/LandingPage.js';
 
 //Context Imports
 //import { UserContext } from "./context/UserContext"
@@ -27,7 +29,9 @@ function App() {
     <div className="App"> 
     <Navbar />
       <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/NutritionInfo' element={<NutritionInfo />} />
+          <Route path='/SignInOrUpPage' element={<SignInOrUpPage />} />
           {/* <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} /> */}
       </Routes>
