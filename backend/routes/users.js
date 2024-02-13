@@ -32,7 +32,7 @@ else res.json(user);
  * POST /
  * @description creates a new user 
  */
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
 console.log(req.body);
 try {
     const hashedPassword = await bcrypt.hash(req.body.password, SALT_ROUNDS);
@@ -45,7 +45,32 @@ console.log(error);
 });
 
 
-  
+
+/**
+ * POST /SignIn
+ * @description Log in a user
+ */
+router.post("/signin", async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        // Check if user exists
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ msg: "User not found" });
+        }
+        // Compare password
+        const match = await bcrypt.compare(password, user.password);
+        if (!match) {
+            return res.status(401).json({ msg: "Invalid credentials" });
+        }
+        // If user and password are correct, return user data
+        res.status(200).json(user);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Server Error" });
+    }
+});
+
 /**
  * PUT /:id
  * to update the user's information
