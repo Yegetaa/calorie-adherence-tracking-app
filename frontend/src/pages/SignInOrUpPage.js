@@ -24,7 +24,7 @@ function SignInOrUpPage() {
     }
 
     // make a POST request to the backend
-    const res = await axios.post("", {
+    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/", {
       email: emailInputRef.current.value,
       password: passwordInputRef.current.value,
     });
@@ -46,7 +46,7 @@ function SignInOrUpPage() {
     }
 
     // make a POST request to the backend
-    const res = await axios.post("", {
+    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/", {
       email: emailInputRef.current.value,
       password: passwordInputRef.current.value,
     });

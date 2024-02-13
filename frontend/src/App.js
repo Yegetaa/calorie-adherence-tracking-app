@@ -6,41 +6,34 @@
 
 //const apiKey = "AYk2KQqKxqck8qURepMzOgwYMoUFy2W2ClW2KP2P";
 
-//React Hook Imports
+//React & react-dom-router Hook Imports
 import React, { useState } from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 //Component Imports
 import NutritionInfo from './Components/NutritionInfo';
+import Calendar from "./Components/Calendar.js"
+import Navbar from './Components/NavBar.js';
 
 //Page Imports
 import SignInOrUpPage from './pages/SignInOrUpPage';
+import Home from './pages/LandingPage.js';
 
 //Context Imports
-import { UserContext } from "./context/UserContext"
+//import { UserContext } from "./context/UserContext"
 
 function App() {
-  const [user, setUser] = useState("");
-
   return(
-    <UserContext.Provider value={{user, setUser}}>
-
-    <div className="App">
-      {
-        user? (
-          <>
-        <h1 className="App-title"> Calorie Adherence Tracking App</h1>
-        <NutritionInfo></NutritionInfo>
-          </>
-          ) : (
-            <SignInOrUpPage/>
-          )
-      }
-
+    <div className="App"> 
+    <Navbar />
+      <Routes>
+          <Route path='/' element={<Home />} />
+          {/* <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} /> */}
+      </Routes>
     </div>
 
-    </UserContext.Provider>
-  )
-}
+  )}
 
 export default App;
 

@@ -41,6 +41,9 @@ https://trello.com/invite/b/9v2eJ1o4/ATTI17df76aca97dffc6d5a031f3ac43ef31CB08898
 
 This application access the FoodData Central API (https://fdc.nal.usda.gov/api-guide.html) to get accurate and up-to-date information of the dietary analysis of food items. The FoodData Central API is developed by the United States Department of Agriculture (USDA), and offers extensive information about various food items, including their nutritional content, serving sizes, and ingredients. In this application, the first item that comes as a response to a user-entered query word is selected and the serving size, calories per serving, and the macro nutrients content (in grams) of that item is returned to the user. 
 
+### Pictures and Other Media 
+* Landing Page Foods Picture: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.culinarynutrition.com%2F10-health-habits-to-start-right-now%2F&psig=AOvVaw1duyDz5VqJAOH1Yi9oT_R7&ust=1707848993995000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODNvba3poQDFQAAAAAdAAAAABAJ
+* <a href="https://www.freepik.com/free-ai-image/colorful-fantastical-depiction-brain_69877644.htm#page=2&query=knowledge%20is%20power&position=4&from_view=search&track=ais_ai_generated&uuid=cfdd02cb-6c8c-4d76-89df-5c67b7c57a67">Image By freepik</a>
 
 # 3: Upcoming Updates ###
 ## 3.1  Upcoming Updates in the Backend 
