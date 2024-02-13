@@ -34,6 +34,7 @@ https://trello.com/invite/b/9v2eJ1o4/ATTI17df76aca97dffc6d5a031f3ac43ef31CB08898
 
 ### Technologies Used ###
 * React { hooks: useEffect, useState, useContext, useRef }
+* MUI library for UI (https://mui.com/material-ui/getting-started/)
 * React Bootstrap 
 * react-router-dom { hooks: BrowserRouter }
 
@@ -51,9 +52,13 @@ This application access the FoodData Central API (https://fdc.nal.usda.gov/api-g
 ## 3.2 Upcoming Updates in the Frontend
 A Year component that allows users to select a month, 
 A Calendar component that is updated to render the calendar for the selected month of the year. 
-# Resources
+An about page that explains the philosophy behind the app.
+# Other Resources
 * https://github.com/alessandradocouto/landing-page-template-reactjs
-*
+* https://www.youtube.com/watch?v=wyVFo2X5IM8
+* https://www.youtube.com/watch?v=uvS9MavVbao
+*https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+
 
 <br>
 
