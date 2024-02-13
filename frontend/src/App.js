@@ -7,8 +7,9 @@
 //const apiKey = "AYk2KQqKxqck8qURepMzOgwYMoUFy2W2ClW2KP2P";
 
 //React & react-dom-router Hook Imports
-import React, { useState } from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+// import React, { useState } from 'react';
+// import BrowserRouter from'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
 //Component Imports
 // import NutritionInfo from './pages/NutritionInfo.js';
@@ -17,7 +18,7 @@ import Navbar from './Components/NavBar.js';
 
 //Page Imports
 import SignInOrUpPage from './pages/SignInOrUpPage';
-import Home from './pages/LandingPage.js';
+// import Home from './pages/LandingPage.js';
 import NutritionInfo from './pages/NutritionInfo.js';
 import LandingPage from './pages/LandingPage.js';
 
