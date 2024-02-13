@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Calendar from "../Components/Calendar.js"
+
 
 function NutritionInfo() {
   const [query, setQuery] = useState('');
@@ -67,12 +69,22 @@ function NutritionInfo() {
       <form onSubmit={handleSubmit} style={{ marginTop: "20px"}}>
       <input
         type="text"
-        placeholder="Search Food Here"
+        placeholder="Enter Food Here"
         value={query}
         onChange={handleInputChange}
-        style={{ marginBottom: "50 px"}}
+        style={{ marginBottom: "50 px", padding: "5px", borderRadius: "3px"}}
       />
-       <button type="submit">Search</button>
+       <button 
+       type="submit"
+       style={{
+        padding: "8px",
+        backgroundColor: "#007bff",
+        color: "#fff",
+        border: "none",
+        borderRadius: "3px",
+        cursor: "pointer",
+        transition: "background-color 0.3s"
+       }}>Search</button>
       </form>
       {submitted && foodData && (
         <div>
@@ -103,7 +115,7 @@ function NutritionInfo() {
           </table>
         </div>
       )}
-     
+    <Calendar></Calendar>
     </div>
   );
 }

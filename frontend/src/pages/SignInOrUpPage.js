@@ -1,9 +1,9 @@
 import { useRef, useState, useContext } from "react";
 import axios from "axios";
-import { UserContext } from "../context/UserContext";
+import UserProvider from "../context/UserContext";
 
 function SignInOrUpPage() {
-  const userCtx = useContext(UserContext);
+  const userCtx = useContext(UserProvider) || {};
   const { setUser } = userCtx;
 
   const emailInputRef = useRef(null);
@@ -23,8 +23,7 @@ function SignInOrUpPage() {
       return;
     }
 
-    // make a POST request to the backend
-    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/", {
+    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/signin", {
       email: emailInputRef.current.value,
       password: passwordInputRef.current.value,
     });
@@ -45,8 +44,7 @@ function SignInOrUpPage() {
       return;
     }
 
-    // make a POST request to the backend
-    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/", {
+    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/signup", {
       email: emailInputRef.current.value,
       password: passwordInputRef.current.value,
     });
@@ -56,10 +54,94 @@ function SignInOrUpPage() {
   };
 
   return (
-    <main>
-      <h1>Welcome</h1>
+    <main 
+    style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      alignItems: "center", 
+      height: "100vh" }}>
+       <div
+        style={{
+          width: "25vw", 
+          height: "70%", 
+          border: "1px solid #ccc", 
+          borderRadius: "8px", 
+          padding: "10px", boxShadow: "2px 2px 2px 1px gray"  }}>
+      <h1 
+      style={{ 
+        
+        textAlign: "center", 
+        textTransform: "uppercase",
+        borderBottom: "2px solid #333",
+        paddingBottom: "10px",
+        margin: "20px "
+        }}>Welcome</h1>
 
       {showSignUp ? (
+        <div>
+          <form
+            onSubmit={handleSignUp}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              padding: "10px",
+            }}
+          >
+            <h3 style={{
+              color: "orange",
+              borderBottom: "1px solid orange",
+              textTransform: "uppercase"
+            }}>Sign Up</h3>
+            {/* <label htmlFor="email">Email</label> */}
+            <input
+              ref={emailInputRef}
+              name="email"
+              id="email"
+              type="text"
+              placeholder="Enter your Email"
+              style= {{ 
+              marginBottom: "10px", 
+              padding: "5px",
+              width: "100%", 
+              borderRadius: "3px", 
+              border: "1px solid #ccc"}}
+            />
+            {/* <label htmlFor="password">Password</label> */}
+            <input
+              ref={passwordInputRef}
+              name="password"
+              id="password"
+              type="password"
+              style= {{ 
+                marginBottom: "10px", 
+                padding: "5px",
+                width: "100%", 
+                borderRadius: "3px", 
+                border: "1px solid #ccc"}}
+              placeholder="Enter your password"
+            />
+            <button type="submit"
+            style={{ 
+              padding: "5px 10px", 
+              background: "#007bff", 
+              color: "#fff",
+              border: "none", 
+              borderRadius: "3px", 
+              cursor: "pointer" }}>Sign Up</button>
+          </form>
+          <span>
+            Already have an account?{" "}
+            <button onClick={() => setShowSignUp(!showSignUp)}
+            style={{
+              border: "none", 
+              background: "none", 
+              color: "#007bff", 
+              cursor: "pointer"
+            }}>Sign In</button>
+          </span>
+        </div>
+      ) : (
         <div>
           <form
             onSubmit={handleSignIn}
@@ -67,65 +149,69 @@ function SignInOrUpPage() {
               display: "flex",
               flexDirection: "column",
               padding: "10px",
+              alignItems: "center",
             }}
           >
-            <h3>Sign In</h3>
-            <label htmlFor="email">Email</label>
+            <h3 style={{
+              color: "orange",
+              borderBottom: "1px solid orange",
+              textTransform: "uppercase"
+            }}>Sign In</h3>
+            {/* <label htmlFor="email">Email</label> */}
             <input
               ref={emailInputRef}
               name="email"
               id="email"
               type="text"
-              placeholder="Email or phone"
+              placeholder="Enter Your Email"
+              style={{
+                marginBottom: "10px",
+                padding: "5px",
+                width: "100%",
+                borderRadius: "3px",
+                border: "1px solid #ccc"
+              }}
             />
-            <label htmlFor="password">Password</label>
+            {/* <label htmlFor="password">Password</label> */}
             <input
               ref={passwordInputRef}
               name="password"
               id="password"
-              type="text"
+              type="password"
+              style={{
+                marginBottom: "10px",
+                padding: "5px",
+                width: "100%",
+                borderRadius: "3px",
+                border: "1px solid #ccc"
+              }}
+              placeholder="Enter your password"
             />
-            <button type="submit">Sign In</button>
+            <button 
+            type="submit"
+            style={{
+              padding: "5px 10px",
+              background: "#007bff", 
+              color: "#fff",
+              border: "none",
+              borderRadius: "3px",
+              cursor: "pointer"
+            }}>Sign In</button>
           </form>
           <span>
             Don't have an account?{" "}
-            <button onClick={() => setShowSignUp(!showSignUp)}>Sign Up</button>
-          </span>
-        </div>
-      ) : (
-        <div>
-          <form
-            onSubmit={handleSignUp}
+            <button 
+            onClick={() => setShowSignUp(!showSignUp)}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "10px",
-            }}
-          >
-            <h3>Sign Up</h3>
-            <label htmlFor="email">Email</label>
-            <input
-              ref={emailInputRef}
-              name="email"
-              id="email"
-              type="text"
-              placeholder="Email or phone"
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              ref={passwordInputRef}
-              name="password"
-              id="password"
-              type="text"
-            />
-            <button type="submit">Sign Up</button>
-          </form>
-          <span>
-            Already have an account?{" "}
-            <button onClick={() => setShowSignUp(!showSignUp)}>Sign In</button>
+              border: "none", 
+              background: "none", 
+              color: "#007bff", 
+              cursor: "pointer"
+            }}>Sign Up</button>
           </span>
         </div>
       )}
+      </div>
     </main>
   );
 }
