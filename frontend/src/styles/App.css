@@ -1,0 +1,30 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+
+.day {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  position: relative;
+}
+
+
+.day input[type="number"] {
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  font-family: inherit;
+  background-color: transparent;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
