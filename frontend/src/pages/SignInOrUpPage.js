@@ -1,13 +1,15 @@
 import { useRef, useState, useContext } from "react";
 import axios from "axios";
-import UserProvider from "../context/UserContext";
+import {UserContext} from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function SignInOrUpPage() {
-  const userCtx = useContext(UserProvider) || {};
+  const userCtx = useContext(UserContext) || {};
   const { setUser } = userCtx;
-
+  const navigate = useNavigate();
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
+  const caloriesInputRef = useRef(null);
 
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -23,13 +25,14 @@ function SignInOrUpPage() {
       return;
     }
 
-    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/signin", {
+    const res = await axios.post("http://localhost:3000/api/users/signin", {
       email: emailInputRef.current.value,
       password: passwordInputRef.current.value,
     });
 
     console.log(res.data);
     setUser(res.data);
+    navigate("/calendar");
   };
 
   const handleSignUp = async (e) => {
@@ -44,13 +47,15 @@ function SignInOrUpPage() {
       return;
     }
 
-    const res = await axios.post("https://calotrack-calorie-adherence-tracker.onrender.com/signup", {
+    const res = await axios.post("http://localhost:3000/api/users/signup", {
       email: emailInputRef.current.value,
       password: passwordInputRef.current.value,
+      calorieTarget: caloriesInputRef.current.value,
     });
 
     console.log(res.data);
     setUser(res.data);
+    navigate("/calendar");
   };
 
   return (
@@ -122,7 +127,7 @@ function SignInOrUpPage() {
               placeholder="Enter your password"
             />
              <input
-        // 
+        ref={caloriesInputRef}
         name="calorieGoal"
         id="calorieGoal"
         type="number"
