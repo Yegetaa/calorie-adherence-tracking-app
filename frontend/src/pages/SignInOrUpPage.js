@@ -121,6 +121,20 @@ function SignInOrUpPage() {
                 border: "1px solid #ccc"}}
               placeholder="Enter your password"
             />
+             <input
+        // 
+        name="calorieGoal"
+        id="calorieGoal"
+        type="number"
+        placeholder="Enter your daily calorie goal"
+        style={{
+          marginBottom: "10px",
+          padding: "5px",
+          width: "100%",
+          borderRadius: "3px",
+          border: "1px solid #ccc"
+        }}
+      />
             <button type="submit"
             style={{ 
               padding: "5px 10px", 
