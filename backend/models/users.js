@@ -7,7 +7,7 @@ import bcrypt from "bcrypt";
 const SALT_ROUNDS = 8;
 
 const usersSchema = Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+    _id: Schema.ObjectId,
     email: {
         type: String,
         required: true,
@@ -22,7 +22,7 @@ const usersSchema = Schema({
     calorieTarget: {
         type: Number,
         min: 0,
-        max: 100,
+        max: 10000,
     },
 }, {
     timestamps: true,

@@ -37,7 +37,6 @@ else res.json(user);
  */
 router.post('/signup', async (req, res) => {
     const user = new User({
-        _id: new mongoose.Types.ObjectId(),
         email: req.body.email,
         password: req.body.password,
         calorieTarget: req.body.calorieTarget
