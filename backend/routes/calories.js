@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
  * POST /
  * @description to add a new daily calorie consumption entry
  */
-router.post('/', async (req, res) => {
+router.post('/newday', async (req, res) => {
   try {
     const newCalorie = new CalorieConsumption({
       user: req.user._id,
