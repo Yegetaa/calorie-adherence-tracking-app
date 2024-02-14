@@ -7,7 +7,7 @@ import bcrypt from "bcrypt";
 const SALT_ROUNDS = 8;
 
 const usersSchema = Schema({
-    //_id: Schema.ObjectId,
+    
     email: {
         type: String,
         required: true,
