@@ -8,11 +8,6 @@ const SALT_ROUNDS = 8;
 
 const usersSchema = Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    username: {
-        type: String,
-        minLength: 3,
-        maxLength: 20
-    },
     email: {
         type: String,
         required: true,
@@ -24,10 +19,10 @@ const usersSchema = Schema({
         maxLength: 50,
         required: true
     },
-    age: {
+    calorieTarget: {
         type: Number,
-        min: 18,
-        max: 200
+        min: 0,
+        max: 100,
     },
 }, {
     timestamps: true,
@@ -56,4 +51,6 @@ usersSchema.pre('save', async function(next) {
     return next();
 });
 
-export default mongoose.model('User', usersSchema);
+const User = mongoose.model('User', usersSchema);
+
+export default User;
