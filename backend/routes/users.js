@@ -100,7 +100,7 @@ router.put('/:id', async (req, res) => {
 /**
  * DELETE /:id
  */
-router.delete('/:id', getUser, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         await res.user.remove();
         res.json({ message: 'User deleted' });
