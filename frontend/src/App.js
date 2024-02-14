@@ -21,22 +21,39 @@ import SignInOrUpPage from './pages/SignInOrUpPage';
 // import Home from './pages/LandingPage.js';
 import NutritionInfo from './pages/NutritionInfo.js';
 import LandingPage from './pages/LandingPage.js';
+import Calendar from './Components/Calendar.js';
 
 //Context Imports
-//import { UserContext } from "./context/UserContext"
+import { UserContext } from "./context/UserContext"
+
+import { useState } from 'react';
 
 function App() {
+  const [user, setUser] = useState(null);
   return(
-    <div className="App"> 
-    <Navbar />
+    <UserContext.Provider value={{ user, setUser}}>
+    {user? (
+      <> 
+      <Navbar />
+      <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/NutritionInfo' element={<NutritionInfo />} />
+          {/* <Route path='/SignInOrUpPage' element={<SignInOrUpPage />} /> */}
+          <Route path='/calendar' element={< Calendar />} />
+      </Routes>
+      </>
+    ): (
+      <div>
+      <Navbar />
       <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/NutritionInfo' element={<NutritionInfo />} />
           <Route path='/SignInOrUpPage' element={<SignInOrUpPage />} />
-          {/* <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} /> */}
+          {/* <Route path='/calendar' element={< Calendar />} /> */}
       </Routes>
-    </div>
+      </div>
+    )}
+    </UserContext.Provider>
 
   )}
 
