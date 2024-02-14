@@ -79,7 +79,7 @@ router.post('/signin', async (req, res) => {
  * PUT /:id
  * to update the user's information
  */
-router.put('/:id', getUser, async (req, res) => {
+router.put('/:id', async (req, res) => {
     if (req.body.email != null) {
         res.user.email = req.body.email;
     }
