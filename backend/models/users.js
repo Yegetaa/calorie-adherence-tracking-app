@@ -16,12 +16,12 @@ const usersSchema = Schema({
     password: {
         type: String,
         minLength: 8,
-        maxLength: 50,
+        maxLength: 500,
         required: true
     },
     calorieTarget: {
         type: Number,
-        min: 0,
+        min: 1200,
         max: 10000,
     },
 }, {
