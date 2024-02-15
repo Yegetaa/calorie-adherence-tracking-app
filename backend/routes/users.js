@@ -80,35 +80,51 @@ router.post('/signin', async (req, res) => {
  * PUT /:id
  * to update the user's information
  */
-router.put('/:id', async (req, res) => {
-    if (req.body.email != null) {
-        res.user.email = req.body.email;
-    }
-    if (req.body.password != null) {
-        res.user.password = req.body.password;
-    }
-    if (req.body.calorieTarget != null) {
-        res.user.calorieTarget = req.body.calorieTarget;
-    }
+router.put('/update/:id', async (req, res) => {
     try {
-        const updatedUser = await res.user.save();
+        const userId = req.params.id;
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        if (req.body.email !== undefined) {
+            user.email = req.body.email;
+        }
+        if (req.body.password !== undefined) {
+            user.password = req.body.password;
+        }
+        if (req.body.calorieTarget !== undefined) {
+            user.calorieTarget = req.body.calorieTarget;
+        }
+
+        const updatedUser = await user.save();
         res.json(updatedUser);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 });
 
+
 /**
  * DELETE /:id
  */
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
-        await res.user.remove();
+        const user = await User.findById(req.params.id);
+        console.dir(user);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        await user.deleteOne();
         res.json({ message: 'User deleted' });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
+
 
 
 
