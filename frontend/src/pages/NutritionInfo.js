@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Calendar from "../Components/Calendar.js"
+// import Calendar from "../Components/Calendar.js"
 
 
 function NutritionInfo() {
@@ -115,7 +115,7 @@ function NutritionInfo() {
           </table>
         </div>
       )}
-    <Calendar></Calendar>
+    {/* <Calendar></Calendar> */}
     </div>
   );
 }
