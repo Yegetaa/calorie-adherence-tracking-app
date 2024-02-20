@@ -1,7 +1,8 @@
-# 0: Planning 
+# 0: Planning
 
 ## IDEA
-Introducing CaloTrack, a personalized calorie adherence app designed to empower users on their wellness journey without any moral judgement! Say goodbye to traditional weight-centric apps and welcome a new era of mindful eating and balanced living.
+
+Introducing CaloTrack, a personalized calorie adherence MERN app designed to empower users on their wellness journey without any moral judgement! Say goodbye to traditional weight-centric apps and welcome a new era of mindful eating and balanced living.
 
 CaloTrack allows users to set their own calorie range based on their own individual goals and preferences. Then the app will assign colors for each tracked date based on this range.
 The end result is a simple visual representation of how many days the user has successfully stayed within their chosen calorie range each month. This will allow users to gain valuable insights into their eating habits and patterns. Furthermore, it will allow users to track their progress over time, identify trends, and make informed decisions to support their overall well-being.
@@ -9,56 +10,66 @@ The end result is a simple visual representation of how many days the user has s
 The goal is to help users see their eating habits as the ultimate goal, rather than viewing them merely as a means to an end such as losing or gaining weight. This approach fosters the development of enduring, healthy eating habits.
 
 ## WireFrame
+
 https://drive.google.com/file/d/1cWHiQE81FAT80KeZlNZigus6c2F_pfqb/view?usp=sharing
 
-## Task Planning and Progress Management ##
+## Task Planning and Progress Management
+
 https://trello.com/invite/b/9v2eJ1o4/ATTI17df76aca97dffc6d5a031f3ac43ef31CB088989/calorie-adherence-tracking-app-dev
 
-
 # 1: BACK END SET UP
-### Technologies Used ###
-* Node.js
-* Express
-* MongoDB + Mongoose
-* Bcrypt to hash user passwords
 
-### Middleware Used ###
+### Technologies Used
 
-* cors so that front end to connect to backend 
-* morgan as a logger
-* express.json to have data in req.body
-* express.urlencoded 
+- Node.js
+- Express
+- MongoDB + Mongoose
+- Bcrypt to hash user passwords
+- cors so that front end to connect to backend
+- morgan as a logger
+- express.json to have data in req.body
+- express.urlencoded
+- passport and passport-jwt for authentication
 
-            
+### Deployed Backend: ### https://calotrack-calorie-adherence-tracker.onrender.com
+
 # 2: Front END SET UP
 
-### Technologies Used ###
-* React { hooks: useEffect, useState, useContext, useRef }
-* MUI library for UI (https://mui.com/material-ui/getting-started/)
-* React Bootstrap 
-* react-router-dom { hooks: BrowserRouter }
+### Technologies Used
 
-### Third Party API Used ###
+- React { hooks: useEffect, useState, useContext, useRef, useNavigate }
+- MUI library for UI (https://mui.com/material-ui/getting-started/)
+- React Router
+- react-router-dom { hooks: BrowserRouter }
 
-This application access the FoodData Central API (https://fdc.nal.usda.gov/api-guide.html) to get accurate and up-to-date information of the dietary analysis of food items. The FoodData Central API is developed by the United States Department of Agriculture (USDA), and offers extensive information about various food items, including their nutritional content, serving sizes, and ingredients. In this application, the first item that comes as a response to a user-entered query word is selected and the serving size, calories per serving, and the macro nutrients content (in grams) of that item is returned to the user. 
+### Third Party API Used
 
-### Pictures and Other Media 
-* Landing Page Foods Picture: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.culinarynutrition.com%2F10-health-habits-to-start-right-now%2F&psig=AOvVaw1duyDz5VqJAOH1Yi9oT_R7&ust=1707848993995000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODNvba3poQDFQAAAAAdAAAAABAJ
-* <a href="https://www.freepik.com/free-ai-image/colorful-fantastical-depiction-brain_69877644.htm#page=2&query=knowledge%20is%20power&position=4&from_view=search&track=ais_ai_generated&uuid=cfdd02cb-6c8c-4d76-89df-5c67b7c57a67">Image By freepik</a>
+This application access the FoodData Central API (https://fdc.nal.usda.gov/api-guide.html) to get accurate and up-to-date information of the dietary analysis of food items. The FoodData Central API is developed by the United States Department of Agriculture (USDA), and offers extensive information about various food items, including their nutritional content, serving sizes, and ingredients. In this application, the first item that comes as a response to a user-entered query word is selected and the serving size, calories per serving, and the macro nutrients content (in grams) of that item is returned to the user.
 
-# 3: Upcoming Updates ###
-## 3.1  Upcoming Updates in the Backend 
+### Pictures and Other Media
+
+- <a href = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.culinarynutrition.com%2F10-health-habits-to-start-right-now%2F&psig=AOvVaw1duyDz5VqJAOH1Yi9oT_R7&ust=1707848993995000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODNvba3poQDFQAAAAAdAAAAABAJ" >Landing Page Foods Picture </a>
+
+- <a href="https://www.freepik.com/free-ai-image/colorful-fantastical-depiction-brain_69877644.htm#page=2&query=knowledge%20is%20power&position=4&from_view=search&track=ais_ai_generated&uuid=cfdd02cb-6c8c-4d76-89df-5c67b7c57a67">Image By freepik</a>
+
+# Other Resources
+
+- https://github.com/alessandradocouto/landing-page-template-reactjs
+- https://www.youtube.com/watch?v=wyVFo2X5IM8
+- https://www.youtube.com/watch?v=uvS9MavVbao
+- https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+
+# 3: Upcoming Updates
+
+## 3.1 Upcoming Updates in the Backend
+
+Routes for Calorie entries (updates)
 
 ## 3.2 Upcoming Updates in the Frontend
-A Year component that allows users to select a month, 
-A Calendar component that is updated to render the calendar for the selected month of the year. 
-An about page that explains the philosophy behind the app.
-# Other Resources
-* https://github.com/alessandradocouto/landing-page-template-reactjs
-* https://www.youtube.com/watch?v=wyVFo2X5IM8
-* https://www.youtube.com/watch?v=uvS9MavVbao
-*https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
 
+- A Year page that allows users to see all 12 months in one page
+- An about page that explains the philosophy behind the app
+- A "profile" page for users that would allow for account deletion and updating information
 
 <br>
 
@@ -67,22 +78,27 @@ An about page that explains the philosophy behind the app.
 # Backend Code
 
 #### conn.js
+
 The function on this file attempts to connect to a MongoDB database using the mongoose library. It connects to the database using the process.env.ATLAS_URI (which can be found on the .env file) variable, which is expected to contain the connection string to the MongoDB database.
 
 If the connection is successful, the function logs a message to the console indicating that the connection was successful. If the connection fails, the function logs an error message to the console containing the error message.
 
 #### localEnv.js and .env
-The code on the localEnv file imports the dotenv package and calls the config method on it. Dotenv is a package that allows you to load environment variables from a .env file into your Node.js process. The environment variable defined in the .env file is ATLAS_URI which contains the URI of the MongoDB database that this application is storing data at. Port 3000 is also defined in the .env file to be used as the port number on which the application will run. 
+
+The code on the localEnv file imports the dotenv package and calls the config method on it. Dotenv is a package that allows you to load environment variables from a .env file into your Node.js process. The environment variable defined in the .env file is ATLAS_URI which contains the URI of the MongoDB database that this application is storing data at. Port 3000 is also defined in the .env file to be used as the port number on which the application will run.
 
 #### calories.js (Model)
+
 This code defines a new Schema for a collection of calorie consumption records called CalorieConsumption. The Schema defines three fields: user, date, and totalCalories.
 
 The user field is a reference to another Schema called User, which is defined elsewhere. This means that the user field will store the ID of the associated User document.The date field is of type Date, which means it will store a date value.The totalCalories field is of type Number, and it has several constraints: it is required, it has a default value of 0, it must be a positive value less than or equal to 10000, and it must be a number.
 
 The code ends by exporting the model, which will make it available for use in other parts of the application.
+
 #### calories.js (Route)
 
 #### users.js (Model)
+
 This page contains a MongoDB schema definition for a user model. It defines the structure of the user data, including their username, email, password, and age.
 
 The code snippet starts by importing the necessary modules: mongoose and bcrypt. Next, the code defines the structure of the user data using a Schema object from mongoose. The schema defines the properties of the user, including their username, email, password, and age.
@@ -92,7 +108,8 @@ The code also sets some options for the schema, including enabling timestamps an
 The code then defines an index for the email and username fields to ensure that they are unique. The code then defines a pre-save hook that hashes the password before saving it to the database. This is done by calling the bcrypt.hash function and passing in the password and the salt rounds. Finally, the code exports the model using the mongoose.model function and gives it the name User.
 
 #### users.js (Route)
-The code starts by importing the necessary modules: express for creating routes, bcrypt for hashing passwords, and User from a users.js model file. Then, a constant SALT_ROUNDS is defined for the number of rounds of encryption to use when hashing passwords. The router variable is instantiated as a new instance of Router from the express module so that the following routes can be created. 
+
+The code starts by importing the necessary modules: express for creating routes, bcrypt for hashing passwords, and User from a users.js model file. Then, a constant SALT_ROUNDS is defined for the number of rounds of encryption to use when hashing passwords. The router variable is instantiated as a new instance of Router from the express module so that the following routes can be created.
 
 The first route, GET /, returns all users in the database. The code uses the User.find() method to retrieve all users from the database and stores them in a variable users. The response is then sent with a status code of 200 and the JSON representation of the users.
 
@@ -123,9 +140,10 @@ The next line imports two routes modules: usersRoutes and caloriesRoutes.The nex
 The final line of code is a simple GET route that sends a response of "Welcome" to the client when the root URL is requested.
 
 # Frontend Code
+
 #### NutritionInfo.js (Component)
 
-#### UserContext.js 
+#### UserContext.js
 
 #### SignInorUpPage.js
 
@@ -134,4 +152,3 @@ This page contains a React functional component that handles the sign-in and sig
 #### App.css
 
 #### App.js
-
