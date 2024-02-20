@@ -28,7 +28,7 @@ function NutritionInfo() {
 
    
       fetchData();
-  }, []); // Changed from [foodData, query] to [query] because it caused an infinite loop.
+  }, [query]); // Changed from [foodData, query] to [query] because it caused an infinite loop.
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
